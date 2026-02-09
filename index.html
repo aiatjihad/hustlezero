@@ -17,109 +17,131 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .hustle-card:hover { transform: translateY(-5px); border-color: #38bdf8; }
+        .hustle-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hustle-card:hover { 
+            transform: translateY(-10px); 
+            border-color: #38bdf8; 
+            box-shadow: 0 20px 25px -5px rgba(56, 189, 248, 0.1), 0 10px 10px -5px rgba(56, 189, 248, 0.04);
+        }
+        .hero-image {
+            background: linear-gradient(rgba(10, 14, 20, 0.8), rgba(10, 14, 20, 0.8)), url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-white selection:bg-sky-500/30">
 
     <!-- Navigation -->
-    <nav class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center border-b border-slate-900">
+    <nav class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center border-b border-slate-900/50 sticky top-0 bg-slate-950/80 backdrop-blur-md z-50">
         <div class="text-2xl font-black tracking-tighter">HUSTLE<span class="text-sky-500">ZERO</span></div>
         <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
             <a href="#directory" class="hover:text-white transition">Hustle Directory</a>
-            <a href="#newsletter" class="hover:text-white transition">Get New Blueprints</a>
+            <a href="#ghostwriting" class="hover:text-white transition">AI Ghostwriting</a>
+            <a href="#newsletter" class="hover:text-white transition">Newsletter</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="max-w-6xl mx-auto px-6 pt-16 pb-12 text-center">
-        <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
-            The <span class="gradient-text">$0 Budget</span> Library.
-        </h1>
-        <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10">
-            We've curated the highest-demand skills of 2026. Pick a path, follow the AI-powered blueprint, and start earning today without spending a dime.
-        </p>
+    <header class="hero-image relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 pt-32 pb-24 text-center relative z-10">
+            <div class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide uppercase bg-sky-500/20 text-sky-400 rounded-full border border-sky-500/30 backdrop-blur-sm">
+                Next-Gen Side Hustles 2026
+            </div>
+            <h1 class="text-6xl md:text-8xl font-black mb-8 leading-tight tracking-tight">
+                The <span class="gradient-text">Future</span> is <br>Zero Budget.
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 font-light leading-relaxed">
+                Unlock 10+ high-demand AI blueprints designed to build your income from absolute zero. No startup costs. No experience required.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="#directory" class="bg-sky-600 hover:bg-sky-500 text-white px-10 py-5 rounded-2xl font-bold transition-all transform hover:scale-105 shadow-xl shadow-sky-600/30">
+                    Explore Directory
+                </a>
+                <a href="#newsletter" class="bg-slate-900/80 backdrop-blur-sm hover:bg-slate-800 text-slate-200 px-10 py-5 rounded-2xl font-bold border border-slate-700 transition-all transform hover:scale-105">
+                    Join Waitlist
+                </a>
+            </div>
+        </div>
     </header>
 
+    <!-- Visual Divider -->
+    <div class="h-24 bg-gradient-to-b from-slate-950 to-slate-900"></div>
+
     <!-- Hustle Directory -->
-    <section id="directory" class="max-w-6xl mx-auto px-6 py-12">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section id="directory" class="max-w-6xl mx-auto px-6 py-20 bg-slate-900/20">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-black mb-4">Pick Your Path</h2>
+            <p class="text-slate-500">Curated opportunities for 2026 digital entrepreneurs.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             <!-- Path 1: Content -->
-            <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-2xl transition-all hustle-card">
-                <span class="text-xs font-bold text-sky-400 uppercase tracking-widest">Content & Writing</span>
-                <h3 class="text-xl font-bold mt-2 mb-3">24/7 AI Ghostwriting</h3>
-                <p class="text-slate-400 text-sm mb-4">Manage the social presence of high-net-worth founders using voice-clone AI. Charge $1k/mo per client.</p>
-                <a href="#ghostwriting" class="text-sky-400 text-sm font-bold hover:underline">Read Full Blueprint &rarr;</a>
+            <div class="border border-slate-800 p-8 rounded-3xl transition-all hustle-card relative overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1675271591211-126ad94e495d?q=80&w=400&auto=format&fit=crop" alt="AI Writing" class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity">
+                <div class="relative z-10">
+                    <span class="text-xs font-bold text-sky-400 uppercase tracking-widest bg-sky-500/10 px-3 py-1 rounded-full">Autonomous Writing</span>
+                    <h3 class="text-2xl font-bold mt-4 mb-4">24/7 AI Ghostwriting</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Dominate social media for tech founders. Use voice-cloning LLMs to post 24/7 in their unique tone.</p>
+                    <a href="#ghostwriting" class="inline-flex items-center text-sky-400 text-sm font-bold hover:text-sky-300 transition">
+                        Full Blueprint <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
             </div>
 
-            <!-- Path 2: E-commerce -->
-            <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-2xl transition-all hustle-card">
-                <span class="text-xs font-bold text-purple-400 uppercase tracking-widest">Digital Goods</span>
-                <h3 class="text-xl font-bold mt-2 mb-3">Prompt Engineering Store</h3>
-                <p class="text-slate-400 text-sm mb-4">Create high-complexity prompt chains for specific industries (Legal, Medical) and sell them on free marketplaces.</p>
-                <span class="text-slate-600 text-xs italic">Blueprint Coming Tomorrow</span>
+            <!-- Path 2: Design -->
+            <div class="border border-slate-800 p-8 rounded-3xl transition-all hustle-card relative overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=400&auto=format&fit=crop" alt="AI Design" class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity">
+                <div class="relative z-10">
+                    <span class="text-xs font-bold text-purple-400 uppercase tracking-widest bg-purple-500/10 px-3 py-1 rounded-full">Visual Tech</span>
+                    <h3 class="text-2xl font-bold mt-4 mb-4">Neural Brand Identity</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Generate complete startup branding kits—logos, UI, and palettes—using vector-generative AI in seconds.</p>
+                    <span class="text-slate-600 text-xs italic font-medium">New Guide Live</span>
+                </div>
             </div>
 
-            <!-- Path 3: Services -->
-            <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-2xl transition-all hustle-card">
-                <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Remote Service</span>
-                <h3 class="text-xl font-bold mt-2 mb-3">AI Automation Agency (AAA)</h3>
-                <p class="text-slate-400 text-sm mb-4">Help local businesses automate their customer support using free-tier LLM wrappers. Save them thousands.</p>
-                <span class="text-slate-600 text-xs italic">Guide Loading...</span>
-            </div>
-
-            <!-- Path 4: Media -->
-            <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-2xl transition-all hustle-card">
-                <span class="text-xs font-bold text-orange-400 uppercase tracking-widest">Social Media</span>
-                <h3 class="text-xl font-bold mt-2 mb-3">Faceless YouTube Empire</h3>
-                <p class="text-slate-400 text-sm mb-4">Generate scripts, voiceovers, and stock-video montages using 100% free AI tools. Monetize via ads and affiliate links.</p>
-                <span class="text-slate-600 text-xs italic">Blueprint Available in Newsletter</span>
-            </div>
-
-            <!-- Path 5: Data -->
-            <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-2xl transition-all hustle-card">
-                <span class="text-xs font-bold text-rose-400 uppercase tracking-widest">Information</span>
-                <h3 class="text-xl font-bold mt-2 mb-3">Niche Research Reports</h3>
-                <p class="text-slate-400 text-sm mb-4">Use AI to analyze market gaps in specific industries and sell the "Opportunity Reports" to hungry entrepreneurs.</p>
-                <span class="text-slate-600 text-xs italic">Available Now</span>
-            </div>
-
-            <!-- Path 6: Design -->
-            <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-2xl transition-all hustle-card">
-                <span class="text-xs font-bold text-yellow-400 uppercase tracking-widest">Creative</span>
-                <h3 class="text-xl font-bold mt-2 mb-3">AI Brand Identity Design</h3>
-                <p class="text-slate-400 text-sm mb-4">Offer logo, color palette, and social asset kits for new startups using vector-generative AI tools.</p>
-                <span class="text-slate-600 text-xs italic">Available Now</span>
+            <!-- Path 3: Video -->
+            <div class="border border-slate-800 p-8 rounded-3xl transition-all hustle-card relative overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=400&auto=format&fit=crop" alt="AI Video" class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity">
+                <div class="relative z-10">
+                    <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest bg-emerald-500/10 px-3 py-1 rounded-full">Passive Media</span>
+                    <h3 class="text-2xl font-bold mt-4 mb-4">Faceless YouTube 2.0</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Automate script-to-video production for niche educational channels. Zero filming. Zero cost. High return.</p>
+                    <span class="text-slate-600 text-xs italic font-medium">Coming Soon</span>
+                </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Detailed Content Area (Ghostwriting expanded) -->
-    <section id="ghostwriting" class="max-w-4xl mx-auto px-6 py-20 bg-slate-900/20 rounded-3xl my-12">
-        <h2 class="text-4xl font-black mb-8">Deep Dive: AI Ghostwriting</h2>
-        <div class="space-y-8 text-slate-300">
-            <div class="bg-slate-800/50 p-6 rounded-xl border-l-4 border-sky-500">
-                <h4 class="text-white font-bold mb-2">The 2026 Strategy</h4>
-                <p>Personal brands are the new resumes. Founders need to post daily to stay relevant. You act as the "silent partner" who makes them look like geniuses using AI-curated insights.</p>
+    <!-- Deep Dive -->
+    <section id="ghostwriting" class="max-w-6xl mx-auto px-6 py-24">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <img src="https://images.unsplash.com/photo-1675271591211-126ad94e495d?q=80&w=800&auto=format&fit=crop" alt="AI Content Creation" class="rounded-3xl shadow-2xl border border-slate-800">
             </div>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div>
-                    <h4 class="text-white font-bold mb-4">Tools You Need ($0)</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li class="flex items-center"><span class="text-sky-500 mr-2">✔</span> Claude/Gemini (Free Tiers)</li>
-                        <li class="flex items-center"><span class="text-sky-500 mr-2">✔</span> Google Sheets for Tracking</li>
-                        <li class="flex items-center"><span class="text-sky-500 mr-2">✔</span> LinkedIn/X for Outreach</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Your Weekly Workflow</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><strong>Mon:</strong> Curate 20 industry news items via AI.</li>
-                        <li><strong>Tue:</strong> Generate 10 high-impact "Hook" drafts.</li>
-                        <li><strong>Wed:</strong> Client Approval & Scheduling.</li>
+            <div>
+                <h2 class="text-4xl font-black mb-8 leading-tight">Master the Art of <br><span class="text-sky-500">Invisible Content.</span></h2>
+                <div class="space-y-6 text-slate-400">
+                    <p>The most successful entrepreneurs in 2026 are too busy building to post. You become their "Digital Twin."</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="mt-1 bg-sky-500/20 p-1 rounded-full mr-4 text-sky-500">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span><strong>Voice Cloning:</strong> Feed AI 10 past posts to perfectly replicate their tone.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="mt-1 bg-sky-500/20 p-1 rounded-full mr-4 text-sky-500">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span><strong>Client Outreach:</strong> Target CEOs on LinkedIn with a "Free Week" of content.</span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -127,19 +149,24 @@
     </section>
 
     <!-- Newsletter -->
-    <section id="newsletter" class="bg-gradient-to-r from-sky-600 to-blue-700 py-20 mt-12">
-        <div class="max-w-4xl mx-auto px-6 text-center text-white">
-            <h2 class="text-4xl md:text-5xl font-black mb-6">Unlock All 10+ Blueprints</h2>
-            <p class="text-sky-100 text-lg mb-10">We release one new "Zero-Budget" blueprint every week. Don't miss the next one.</p>
-            <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" onsubmit="alert('Welcome to the inner circle, Boss!'); return false;">
-                <input type="email" placeholder="Email Address" class="flex-1 px-6 py-4 rounded-xl bg-white text-slate-900 font-bold focus:outline-none" required>
-                <button type="submit" class="bg-slate-950 px-8 py-4 rounded-xl font-black hover:bg-slate-900 transition">Get Access Now</button>
-            </form>
+    <section id="newsletter" class="max-w-6xl mx-auto px-6 mb-24">
+        <div class="bg-gradient-to-br from-sky-600 to-indigo-700 p-12 md:p-20 rounded-[3rem] text-center relative overflow-hidden">
+            <!-- Decorative AI Image in Background -->
+            <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay">
+            
+            <div class="relative z-10">
+                <h2 class="text-4xl md:text-6xl font-black mb-6">Build Your Empire.</h2>
+                <p class="text-sky-100 text-xl mb-12 max-w-2xl mx-auto font-medium">Join 5,000+ entrepreneurs getting the weekly HustleZero Blueprint. 100% Free.</p>
+                <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" onsubmit="alert('Verification sent! Welcome aboard.'); return false;">
+                    <input type="email" placeholder="Your best email" class="flex-1 px-8 py-5 rounded-2xl bg-white text-slate-900 font-bold focus:outline-none focus:ring-4 ring-sky-300" required>
+                    <button type="submit" class="bg-slate-950 text-white px-10 py-5 rounded-2xl font-black hover:bg-slate-900 transition shadow-2xl">Join Now</button>
+                </form>
+            </div>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-slate-500 text-xs uppercase tracking-widest">
-        &copy; 2026 HustleZero &bull; Built by Jarvis for the Boss
+    <footer class="py-12 border-t border-slate-900 text-center text-slate-600 text-xs uppercase tracking-[0.2em]">
+        &copy; 2026 HustleZero &bull; Architected by Jarvis &bull; For the Boss
     </footer>
 
 </body>
